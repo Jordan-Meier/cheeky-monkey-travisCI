@@ -1,0 +1,9 @@
+name = Contact Form
+description = This features holds relevant information for the site contact form
+core = 7.x
+package = Features
+dependencies[] = contact
+dependencies[] = features
+features[contact_categories][] = Website feedback
+features[features_api][] = api:2
+project path = sites/all/modules/features
