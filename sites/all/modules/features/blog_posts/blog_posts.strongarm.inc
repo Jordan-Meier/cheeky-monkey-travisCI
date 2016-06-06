@@ -1,89 +1,70 @@
 <?php
 /**
  * @file
- * news_articles.strongarm.inc
+ * blog_posts.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function news_articles_strongarm() {
+function blog_posts_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_anonymous_news';
+  $strongarm->name = 'comment_anonymous_blog_post';
   $strongarm->value = 0;
-  $export['comment_anonymous_news'] = $strongarm;
+  $export['comment_anonymous_blog_post'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_default_mode_news';
-  $strongarm->value = 1;
-  $export['comment_default_mode_news'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_default_per_page_news';
-  $strongarm->value = '50';
-  $export['comment_default_per_page_news'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_form_location_news';
-  $strongarm->value = 1;
-  $export['comment_form_location_news'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_news';
+  $strongarm->name = 'comment_blog_post';
   $strongarm->value = '2';
-  $export['comment_news'] = $strongarm;
+  $export['comment_blog_post'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_preview_news';
-  $strongarm->value = '1';
-  $export['comment_preview_news'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_subject_field_news';
+  $strongarm->name = 'comment_default_mode_blog_post';
   $strongarm->value = 1;
-  $export['comment_subject_field_news'] = $strongarm;
+  $export['comment_default_mode_blog_post'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'field_bundle_settings_node__news';
+  $strongarm->name = 'comment_default_per_page_blog_post';
+  $strongarm->value = '10';
+  $export['comment_default_per_page_blog_post'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_form_location_blog_post';
+  $strongarm->value = 1;
+  $export['comment_form_location_blog_post'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_preview_blog_post';
+  $strongarm->value = '1';
+  $export['comment_preview_blog_post'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_subject_field_blog_post';
+  $strongarm->value = 1;
+  $export['comment_subject_field_blog_post'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_node__blog_post';
   $strongarm->value = array(
-    'view_modes' => array(
-      'teaser' => array(
-        'custom_settings' => TRUE,
-      ),
-      'full' => array(
-        'custom_settings' => FALSE,
-      ),
-      'rss' => array(
-        'custom_settings' => FALSE,
-      ),
-      'search_index' => array(
-        'custom_settings' => FALSE,
-      ),
-      'search_result' => array(
-        'custom_settings' => FALSE,
-      ),
-      'diff_standard' => array(
-        'custom_settings' => FALSE,
-      ),
-    ),
+    'view_modes' => array(),
     'extra_fields' => array(
       'form' => array(
         'title' => array(
@@ -93,46 +74,46 @@ function news_articles_strongarm() {
       'display' => array(),
     ),
   );
-  $export['field_bundle_settings_node__news'] = $strongarm;
+  $export['field_bundle_settings_node__blog_post'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_options_news';
+  $strongarm->name = 'menu_options_blog_post';
   $strongarm->value = array(
     0 => 'main-menu',
   );
-  $export['menu_options_news'] = $strongarm;
+  $export['menu_options_blog_post'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_parent_news';
+  $strongarm->name = 'menu_parent_blog_post';
   $strongarm->value = 'main-menu:0';
-  $export['menu_parent_news'] = $strongarm;
+  $export['menu_parent_blog_post'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_options_news';
+  $strongarm->name = 'node_options_blog_post';
   $strongarm->value = array(
     0 => 'status',
   );
-  $export['node_options_news'] = $strongarm;
+  $export['node_options_blog_post'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_preview_news';
+  $strongarm->name = 'node_preview_blog_post';
   $strongarm->value = '1';
-  $export['node_preview_news'] = $strongarm;
+  $export['node_preview_blog_post'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_submitted_news';
+  $strongarm->name = 'node_submitted_blog_post';
   $strongarm->value = 1;
-  $export['node_submitted_news'] = $strongarm;
+  $export['node_submitted_blog_post'] = $strongarm;
 
   return $export;
 }

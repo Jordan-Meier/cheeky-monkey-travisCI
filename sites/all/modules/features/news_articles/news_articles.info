@@ -1,9 +1,10 @@
 name = News Articles
-description = Watches the News Articles
+description = Creates new News Articles
 core = 7.x
 package = Features
 dependencies[] = ctools
 dependencies[] = features
+dependencies[] = file_entity
 dependencies[] = image
 dependencies[] = lightning_base
 dependencies[] = lightning_tags
