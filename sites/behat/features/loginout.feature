@@ -11,8 +11,10 @@ Scenario: Logs in to the site
 	Then I should see "Log out"
 		And I should see "My account"
 
+@api
 Scenario: Logs out of the site
 	Given I am on "/"
+		And I am logged in as a user with the "administrator" role
 	When I fill in "Username" with "admin"
 		And I fill in "Password" with "cheekybehatmonkey"
 		And I press "Log in"
