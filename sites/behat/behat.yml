@@ -11,6 +11,6 @@ default:
     Behat\MinkExtension:
       goutte: ~
       selenium2: ~
-      base_url: http://dev-intern-simple-drupal.pantheonsite.io
+      base_url: http://localhost:8888
     Drupal\DrupalExtension:
       blackbox: ~
