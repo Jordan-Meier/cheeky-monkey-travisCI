@@ -18,6 +18,7 @@ default:
       drush:
         alias: 'local'
       drupal:
-        drupal_root: '/Users/jordanmeier/Desktop/intern-simple-drupal'
+        # drupal_root must be changed to the path to the project folder on your local machine
+        drupal_root: '/Users/Jared/Desktop/intern-simple-drupal'
       region_map:
         footer: "#footer"
