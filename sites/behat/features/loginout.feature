@@ -27,3 +27,10 @@ Scenario: Error messages for no input values
     | error messages             |
     | Username field is required |
     | Password field is required |
+
+Scenario: Error message for incorrect information
+	Given I am on "/user"
+	When I fill in "Username" with "TestUser"
+		And I fill in "Password" with "IncorrectPassword"
+		And I press "Log in"
+	Then I should see the error message "Sorry, unrecognized username or password."
