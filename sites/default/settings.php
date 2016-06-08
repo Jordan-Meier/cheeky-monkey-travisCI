@@ -213,14 +213,14 @@
  * @endcode
  */
 $databases = array (
-  'default' => 
+  'default' =>
   array (
-    'default' => 
+    'default' =>
     array (
       'database' => 'intern_simple_site',
       'username' => 'pantheon',
       'password' => 'pantheon',
-      'host' => 'localhost',
+      'host' => '127.0.0.1',
       'port' => '8889',
       'driver' => 'mysql',
       'prefix' => '',
