@@ -14,3 +14,10 @@ default:
       base_url: http://localhost:8888
     Drupal\DrupalExtension:
       blackbox: ~
+      api_driver: 'drupal'
+      drush:
+        alias: 'local'
+      drupal:
+        drupal_root: '/Users/jordanmeier/Desktop/intern-simple-drupal'
+      region_map:
+        footer: "#footer"
