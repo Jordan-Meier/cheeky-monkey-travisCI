@@ -13,6 +13,10 @@ default:
       selenium2: ~
       base_url: http://localhost:8888
     Drupal\DrupalExtension:
+      selectors:
+        message_selector: '.messages'
+        error_message_selector: '.messages.messages.error'
+        success_message_selector: '.messages.messages.status'
       blackbox: ~
       api_driver: 'drupal'
       drush:

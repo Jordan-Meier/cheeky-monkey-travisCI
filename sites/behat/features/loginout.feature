@@ -19,3 +19,11 @@ Scenario: Logs out of the site
 		And I follow "Log out"
 	Then I should see "Log in"
 		And I should not see "My account"
+
+Scenario: Error messages for no input values
+	Given I am on "/user"
+    When I press "Log in"
+    Then I should see the following error messages:
+    | error messages             |
+    | Username field is required |
+    | Password field is required |
