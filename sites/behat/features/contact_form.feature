@@ -16,8 +16,8 @@ Scenario: Fills out website feedback form
 		Given I am on "/contact"
 	    When I press "Send message"
 	    Then I should see the following error messages:
-			| error messages             |
-			| Your name field is required |
+			| error messages                        |
+			| Your name field is required           |
 			| Your e-mail address field is required |
-			| Subject field is required |
-			| Message field is required |
+			| Subject field is required             |
+			| Message field is required             |

@@ -12,7 +12,7 @@ Scenario: Recieving an error attempting to edit a different user's profile
 @api
 Scenario: Recieving error from invalid or no password when attempting to change e-mail or password
 	Given users:
-	| name 						 | pass 				| mail 						 | status |
+	| name             | pass         | mail             | status |
 	| BDD TESTING User | testpassword | test@testing.com | 1 			|
 	Given I am logged in as "BDD TESTING User"
 		And I am on "/"

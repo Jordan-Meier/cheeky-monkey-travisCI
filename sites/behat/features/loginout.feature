@@ -6,8 +6,8 @@ Feature: Log in and out of the site
 @api
 Scenario: Logs in to the site
 	Given users:
-	| name 						 | pass 				| mail 						 | status |
-	| BDD TESTING User | testpassword | test@testing.com | 1 			|
+	| name             | pass         | mail             | status |
+	| BDD TESTING User | testpassword | test@testing.com | 1      |
 	Given I am on the homepage
 	When I fill in "Username" with "BDD TESTING User"
 		And I fill in "Password" with "testpassword"
@@ -18,8 +18,8 @@ Scenario: Logs in to the site
 @api
 Scenario: Logs out of the site
 	Given users:
-	| name 						 | pass 				| mail 						 | status |
-	| BDD TESTING User | testpassword | test@testing.com | 1 			|
+	| name             | pass         | mail             | status |
+	| BDD TESTING User | testpassword | test@testing.com | 1      |
 	Given I am logged in as "BDD TESTING User"
 		And I am on the homepage
 	Then I should see "Log out"
@@ -38,8 +38,8 @@ Scenario: Error messages for no input values
 @api
 Scenario: Error message for incorrect information
 	Given users:
-	| name 						 | pass 				| mail 						 | status |
-	| BDD TESTING User | testpassword | test@testing.com | 1 			|
+	| name             | pass         | mail             | status |
+	| BDD TESTING User | testpassword | test@testing.com | 1      |
 	Given I am on the homepage
 		And I fill in "Username" with "BDD TESTING User"
 		And I fill in "Password" with "AnIncorrectPassword"
