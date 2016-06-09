@@ -27,8 +27,8 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
   public function after(AfterScenarioScope $scope) {
   	$query = new EntityFieldQuery();
     $result = $query->entityCondition('entity_type', 'user')
-      ->propertyCondition('name', 'BDD TESTING', 'STARTS_WITH')
-      ->execute();
+                    ->propertyCondition('name', 'BDD TESTING', 'STARTS_WITH')
+                    ->execute();
     if (isset($result['user'])) {
       $uids = array_keys($result['user']);
       foreach ($uids as $uid) {
