@@ -17,6 +17,20 @@ Scenario: An Unauthenticated User cannot see the comment form
 		And I should not see "Add new comment"
 
 @api
+Scenario: An Authenticated User gets an error message when attempting to post a comment
+	Given users:
+	| name                  | mail             | status |
+	| BDD TESTING Commenter | testing@test.com | 1      |
+	| BDD TESTING Editor    | test@test.com    | 2      |
+		And "Blog Post" content:
+		| title                 | author             | body                  | promote |
+		| BDD TESTING Test Blog | BDD TESTING Editor | Placeholder Body Text | 1       |
+	Given I am logged in as "BDD TESTING Commenter"
+		And I am viewing a "Blog Post" with the title "BDD TESTING Test Blog"
+		And I press "Save"
+	Then I should see the error message "Comment field is required."
+
+@api
 Scenario: An Authenticated User can comment on a post
 	Given users:
 	| name                  | mail             | status |
