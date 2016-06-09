@@ -31,10 +31,8 @@ Scenario: Editor deletes own content
     And I press "Delete"
   Then I should see "Blog Post BDD TESTING Testing has been deleted."
 
-#The following scenario is a WIP. seems like it should pass.
-#Research this further: http://code.tutsplus.com/tutorials/bdd-with-behat--net-36171
 @api
-Scenario: Editor can not edit Blog Post written by someone else
+Scenario: Editor can not edit/delete Blog Post written by someone else
 
 Given users:
 | name | status |
