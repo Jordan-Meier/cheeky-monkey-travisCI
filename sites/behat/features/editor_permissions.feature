@@ -31,11 +31,16 @@ Scenario: Editor deletes own content
     And I press "Delete"
   Then I should see "Blog Post BDD TESTING Testing has been deleted."
 
-#The following scenario is a WIP. seems like it should pass.
-#Research this further: http://code.tutsplus.com/tutorials/bdd-with-behat--net-36171
 @api
-Scenario: Editor can not edit Blog Post written by someone else
-  Given I am logged in as a user with the "editor" role
-    And I am on "/blog"
-    And I am viewing a "Blog Post"
-    And I see "Submitted by admin"
+Scenario: Editor can not edit/delete Blog Post written by someone else
+
+Given users:
+| name | status |
+| Bob | 1 |
+And "Blog Post" content:
+| title | author | body | promote |
+| Blog Post by Bob | Bob | PLACEHOLDER BODY | 1 |
+When I am logged in as a user with the "editor" role
+And I am on "/blog"
+And I follow "Blog Post by Bob"
+Then I should not see the link "Edit"
