@@ -13,11 +13,11 @@ Scenario: Recieving an error attempting to edit a different user's profile
 Scenario: Recieving error from invalid or no password when attempting to change e-mail or password
 	Given users:
 	| name             | pass         | mail             | status |
-	| BDD TESTING User | testpassword | test@testing.com | 1 			|
-	Given I am logged in as "BDD TESTING User"
+	| User | testpassword | test@testing.com | 1 			|
+	Given I am logged in as "User"
 		And I am on "/"
 		And I follow "My account"
-	Then I should see "BDD TESTING User"
+	Then I should see "User"
 	Then I follow "Edit"
 		And I should see "Current password"
 		And I fill in "E-mail address" with "test2@testing.com"
@@ -28,11 +28,11 @@ Scenario: Recieving error from invalid or no password when attempting to change 
 Scenario: Successful password change
 	Given users:
 	| name 						 | pass 				| mail 						 | status |
-	| BDD TESTING User | testpassword | test@testing.com | 1 			|
-	Given I am logged in as "BDD TESTING User"
+	| User | testpassword | test@testing.com | 1 			|
+	Given I am logged in as "User"
 		And I am on "/"
 		And I follow "My account"
-	Then I should see "BDD TESTING User"
+	Then I should see "User"
 	Then I follow "Edit"
 		And I should see "Current password"
 	Then I fill in "Current password" with "testpassword"
