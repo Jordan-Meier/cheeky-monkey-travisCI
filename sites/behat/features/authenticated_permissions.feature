@@ -4,14 +4,14 @@ Feature: Authenticated User Permissions
 	I should not be able to add/edit content or perform admin tasks
 
 @api
-Scenario: Logs authenticated user in and attempts to add content
+Scenario: Authenticated user attempts to add content
 	Given I am logged in as a user with the "authenticated" role
 	Then I should not see "Add content"
 	When I am on "/add"
 	Then I should see "Page not found"
 
 @api
-Scenario: Logs authenticated user in and attempts to edit content
+Scenario: Authenticated user attempts to edit content
 	Given users:
 	| name   | mail           | status |
 	| User 1 | test@user1.com | 1      |
@@ -23,3 +23,9 @@ Scenario: Logs authenticated user in and attempts to edit content
 		And I am on "/"
 	Then I follow "Blog"
 		And I should not see the link "Edit"
+
+@api
+Scenario: Authenticated user attempts to access admin menu
+	Given I am logged in as a user with the "authenticated" role
+		And I am on "/admin"
+	Then I should see "Access denied"
