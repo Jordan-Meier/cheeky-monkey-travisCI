@@ -35,11 +35,11 @@ Scenario: Editor deletes own content
 Scenario: Editor can not edit/delete Blog Post written by someone else
 
 	Given users:
-		| name             | status |
-		| BDD TESTING User | 1      |
+		| name   | status |
+		| User   | 1      |
 	And "Blog Post" content:
-		| title            | author           | body             | promote |
-		| Blog Post by Bob | BDD TESTING User | PLACEHOLDER BODY | 1       |
+		| title            | author | body             | promote |
+		| Blog Post by Bob | User   | PLACEHOLDER BODY | 1       |
 	When I am logged in as a user with the "editor" role
 		And I am on "/blog"
 		And I follow "Blog Post by Bob"
