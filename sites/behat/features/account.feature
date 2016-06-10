@@ -11,5 +11,3 @@ Scenario: Creates a new user account
 		And I press "Create new account"
 	Then I should see "Thank you for applying for an account. Your account is currently pending approval by the site administrator."
 		And I should see "In the meantime, a welcome message with further instructions has been sent to your e-mail address."
-
-
