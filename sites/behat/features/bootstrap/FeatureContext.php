@@ -22,7 +22,7 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
   public function __construct() {
   }
 
-  // Scrub tests clean after running
+  // Scrub non-Drupal API preceded tests clean of users after running
   /** @AfterScenario */
   public function after(AfterScenarioScope $scope) {
   	$query = new EntityFieldQuery();
