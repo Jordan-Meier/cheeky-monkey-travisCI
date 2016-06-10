@@ -15,12 +15,12 @@ Scenario: Logs editor in to the site and creates content
 
 @api
 Scenario: Editor edits own content
-	Given I am logged in as a user with the "editor" role
-    And I am viewing my "Blog Post" with the title "Blog Testing"
+   Given I am logged in as a user with the "editor" role
+    And I am viewing my "Blog Post" with the title "BDD TESTING Testing"
   Then I follow "Edit"
-    And I fill in "Title" with "Blogging is super fun stuff"
+    And I fill in "Title" with "BDD TESTING is super fun stuff"
     And I press "Save"
-  Then I should see "Blog Post Blog is super fun stuff has been updated"
+  Then I should see "Blog Post BDD TESTING is super fun stuff has been updated"
 
 @api
 Scenario: Editor deletes own content
