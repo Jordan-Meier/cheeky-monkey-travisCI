@@ -12,7 +12,7 @@ default:
       goutte: ~
       selenium2: ~
       # BASE URL MUST BE CHANGED WHEN DEPOLYING TO DEV/TEST/LIVE
-      base_url: http://localhost:8888
+      base_url: http://dev-intern-simple-drupal.pantheonsite.io/
     Drupal\DrupalExtension:
       selectors:
         message_selector: '.messages'
@@ -24,6 +24,6 @@ default:
         alias: 'local'
       drupal:
         # drupal_root must be changed to the path to the project folder on your local machine
-        drupal_root: '/Users/Jared/Desktop/intern-simple-drupal'
+        drupal_root: '/srv/bindings/2aebf96b687d46229ee542a3d61a4f3f/code'
       region_map:
         footer: "#footer"
