@@ -1,3 +1,0 @@
-<?php
-  exec('bin/behat');
-?>
