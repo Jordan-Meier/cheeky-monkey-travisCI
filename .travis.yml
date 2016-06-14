@@ -1,0 +1,40 @@
+language: php
+php: 5.3
+env:
+  global:
+    # That random string in the URL when accessing your site's dashboard
+    - PUUID='aaaaaaaa-0000-bbbb-1111-cccccccccccc'
+
+    # The site name (e.g. live-sitename.gotpantheon.com)
+    - PNAME='site-name'
+
+    # The environment from which DB/files will be cloned
+    - PSOURCE='test'
+
+    # The authentication details for a Pantheon account with access to the site
+    - PEMAIL='your-account@example.com'
+    - PPASS='your-account-password'
+
+    # The host against which the build will be run
+    - PHOST="https://$TRAVIS_BRANCH-$PNAME.gotpantheon.com"
+install:
+  # Ensure the build doesn't get hung up on adding unknown hosts.
+  - echo "StrictHostKeyChecking no" > ~/.ssh/config
+
+  # Install drush.
+  - composer global require drush/drush:6.2.0
+  - export PATH="$HOME/.composer/vendor/bin:$PATH"
+
+  # Install terminus.
+  - git clone https://github.com/pantheon-systems/terminus.git $HOME/.drush/terminus
+  - cd $HOME/.drush/terminus
+  - composer update --no-dev
+  - drush cc drush
+
+  # Install additional test dependencies here (like Casper, Behat, etc).
+before_script:
+  - drush psite-ecreate $PUUID $PSITE --source=$PSOURCE
+script:
+  - drush @pantheon.$PNAME.$PSITE test-run MySimpleTestClass --strict=0
+after_script:
+  - drush psite-edelete $PUUID $PSITE -y
